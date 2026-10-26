@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Infra 实验"
+  short_description: "从机制假设到实际执行，验证 AI infra 性能、正确性与适用范围"
+  default_prompt: "使用 $ai-infra-experiments 围绕目标源码和实际运行环境设计实验，验证正确性、性能与适用范围。"
