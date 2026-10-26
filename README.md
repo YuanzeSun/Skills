@@ -7,13 +7,17 @@
 - `clear-report-writing`: 技术、实验与分析报告的写作、改写和审查。
 - `ai-infra-experiments`: AI infra 性能、正确性和系统实验的设计、执行与复核。
 
+## 当前启用状态
+
+203 节点只启用 `clear-report-writing`。`ai-infra-experiments` 保留在仓库中作为源码，但不会链接到 Codex 的 skill 目录。启用列表由仓库根目录的 `enabled-skills.txt` 控制。
+
 ## 目录约定
 
 每个 skill 都有自己的 `SKILL.md`，相关的 `references/`、`scripts/` 和 `agents/` 放在该 skill 目录内。不要让运行中的 skill 依赖仓库根目录下未安装的共享文件。
 
 ## 203 节点使用
 
-仓库位于 `~/personal-codex-skills`。运行下面的命令会把仓库中的每个 skill 链接到 `$CODEX_HOME/skills` 或 `~/.codex/skills`：
+仓库位于 `~/personal-codex-skills`。运行下面的命令会把 `enabled-skills.txt` 中列出的 skill 链接到 `$CODEX_HOME/skills` 或 `~/.codex/skills`：
 
 ```bash
 ./scripts/link-skills.sh
@@ -32,4 +36,4 @@ git commit -m "skill-name: describe the change"
 git push
 ```
 
-校验脚本会调用当前 Codex 安装中的 `skill-creator` validator。它只检查结构和 frontmatter，不替代实际任务测试。
+校验脚本会调用当前 Codex 安装中的 `skill-creator` validator。它会校验仓库中的所有 skill，但不会启用未列入 `enabled-skills.txt` 的 skill。
