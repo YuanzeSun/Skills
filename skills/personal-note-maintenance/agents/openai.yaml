@@ -1,0 +1,4 @@
+interface:
+  display_name: "个人笔记维护"
+  short_description: "按语义整理中文技术笔记，保留个人语气，统一分类排版并核对修改边界"
+  default_prompt: "使用 $personal-note-maintenance 整理这份笔记，按语义重组，保留我的说法，只在需要概括多个小点时起短标题"

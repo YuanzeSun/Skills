@@ -1,3 +1,3 @@
-# Skills linked into Codex on 203.
+# Skills selected for linking into Codex.
 # Add one skill directory name per line to enable it.
 clear-report-writing

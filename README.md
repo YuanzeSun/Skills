@@ -1,23 +1,24 @@
 # Personal Codex Skills
 
-这是个人自用的 Codex skills 源码仓库。每个 skill 保持独立目录，GitHub 仓库作为版本库，203 节点上的工作副本作为主要编辑位置。
+这是一个 Codex skills 源码合集。每个 skill 保持独立目录，可以按需选择使用，仓库用于版本管理与跨环境同步。
 
 ## Skills
 
 - `clear-report-writing`: 技术、实验与分析报告的写作、改写和审查。
 - `ai-infra-experiments`: AI infra 性能、正确性和系统实验的设计、执行与复核。
+- `personal-note-maintenance`: 中文技术笔记的分类重组、轻量改写、排版、误链接修复与查证审批；保留个人语气。
 
-## 当前启用状态
+## 启用范围
 
-203 节点只启用 `clear-report-writing`。`ai-infra-experiments` 保留在仓库中作为源码，但不会链接到 Codex 的 skill 目录。启用列表由仓库根目录的 `enabled-skills.txt` 控制。
+仓库中保存源码，不代表所有 skill 都已安装或启用。`enabled-skills.txt` 控制链接脚本要启用的 skill，每行填写一个目录名；当前列表仅包含 `clear-report-writing`。新增 skill 不会自动加入启用列表。
 
 ## 目录约定
 
 每个 skill 都有自己的 `SKILL.md`，相关的 `references/`、`scripts/` 和 `agents/` 放在该 skill 目录内。不要让运行中的 skill 依赖仓库根目录下未安装的共享文件。
 
-## 203 节点使用
+## 按需启用
 
-仓库位于 `~/personal-codex-skills`。运行下面的命令会把 `enabled-skills.txt` 中列出的 skill 链接到 `$CODEX_HOME/skills` 或 `~/.codex/skills`：
+在仓库根目录运行下面的命令，会把 `enabled-skills.txt` 中列出的 skill 链接到 `$CODEX_HOME/skills` 或 `~/.codex/skills`：
 
 ```bash
 ./scripts/link-skills.sh
@@ -28,7 +29,7 @@
 ## 日常更新
 
 ```bash
-cd ~/personal-codex-skills
+cd Skills
 git pull --ff-only
 ./scripts/validate-skills.sh
 git add skills/<skill-name>
